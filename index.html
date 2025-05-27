@@ -1,689 +1,172 @@
+<!-- 
+- nama pengantin & ortu
+- tgl dan lokasi acara
+- foto prewed
+- maps lokasi acara
+- dompet digital
+- ucapan 
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aji & Nikmah Wedding</title>
-    <link rel="icon" href="assets/img/favicon.ico" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"
-      integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      integrity="sha256-PI8n5gCcz9cQqQXm3PEtDuPG8qx9oFsFctPg0S5zb8g="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
-      integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      integrity="sha256-GqiEX9BuR1rv5zPU5Vs2qS/NSHl1BJyBcjQYJ6ycwD4="
-      crossorigin="anonymous"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- simplyCountdown -->
-    <link
-      rel="stylesheet"
-      href="assets/countdown/simplyCountdown.theme.default.css"
-    />
-    <script src="assets/countdown/simplyCountdown.min.js"></script>
-
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
-
-    <link
-      type="text/css"
-      rel="stylesheet"
-      media="screen"
-      href="/assets/sakura/jquery-sakura.min.css"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/7b12bcc245.js" crossorigin="anonymous"></script>
+    <title>Wedding Invitation</title>
   </head>
-
   <body>
-    <section
-      id="hero"
-      class="fade-in hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
-    >
-      <main class="fade-in-10">
-        <h3>The Wedding Of</h3>
-        <h1>Aji & Nikmah</h1>
-        <p>We request the honour of your presence</p>
-        <a href="#home" class="btn btn-lg mt-2" onClick="enableScroll()"
-          >Open Invitation</a
-        >
-      </main>
-    </section>
-
-    <!-- Navbar Bottom -->
-    <nav
-      class="mynavbar navbar navbar-expand fixed-bottom rounded-top-4"
-      id="navbar-menu"
-    >
-      <ul class="navbar-nav nav-justified w-100 align-items-center">
-        <li class="nav-item">
-          <a class="nav-link" href="#hero">
-            <i class="fa-solid fa-house"></i>
-            <span class="d-block" style="font-size: 0.7rem">Home</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#home">
-            <i class="fa-solid fa-user-group"></i>
-            <span class="d-block" style="font-size: 0.7rem">Bride</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#info">
-            <i class="fa-solid fa-calendar-check"></i>
-            <span class="d-block" style="font-size: 0.7rem">Info</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#wish">
-            <i class="fa-solid fa-comments"></i>
-            <span class="d-block" style="font-size: 0.7rem">Wish</span>
-          </a>
-        </li>
+    <nav>
+      <input type="checkbox" id="check" />
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">A&M</label>
+      <ul class="text">
+        <li><a href="#home" onclick="myFunction()">HOME</a></li>
+        <li><a href="#story" onclick="myFunction()">OUR STORY</a></li>
+        <li><a href="#stay" onclick="myFunction()">TRAVEL & STAY</a></li>
+        <li><a href="#registry" onclick="myFunction()">PROMISES</a></li>
       </ul>
     </nav>
 
-    <section id="home" class="home">
-      <div class="container">
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="3000"
-          data-aos-once="true"
-          class="row justify-content-center"
-        >
-          <div class="col-md-8 text-center">
-            <h2 class="font-arabic py-4 px-2" style="font-size: 2rem">
-              بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
-            </h2>
+    <div id="home" class="home hz-margin">
+      <h3>We're getting married</h3>
+      <h1>Amin & Mela</h1>
+      <div class="container-out">
+        <div class="container-in text">
+          Minggu, 22 Juni 2025 <br />
+          Kediri
 
-            <h2>We Are <br />Getting Married</h2>
-          </div>
+          <button class="huge-btn">RSVP</button>
         </div>
-
-        <div class="row couple">
-          <div class="col-lg-6 mb-4">
-            <div
-              data-aos="zoom-in-right"
-              data-aos-duration="3000"
-              data-aos-once="true"
-              class="row"
-            >
-              <div class="col-9 text-end">
-                <h3>Surya Aji Santosa</h3>
-                <p>
-                  Son of Mr. Suratno & Mrs. Tri Andarini, and was born in
-                  Sukoharjo on April 23, 1999
-                </p>
-              </div>
-              <div class="col-3">
-                <img
-                  src="assets/img/aji.png"
-                  alt="Surya Aji"
-                  class="img-responsive rounded-circle"
-                />
-              </div>
-            </div>
-          </div>
-
-          <span class="heart"><i class="bi bi-heart-fill"></i></span>
-
-          <div class="col-lg-6">
-            <div
-              data-aos="zoom-in-left"
-              data-aos-duration="3000"
-              data-aos-once="true"
-              class="row"
-            >
-              <div class="col-3">
-                <img
-                  src="assets/img/nikmah.png"
-                  alt="Nikmah"
-                  class="img-responsive rounded-circle"
-                />
-              </div>
-              <div class="col-9">
-                <h3>Nikmah Hayati Islam</h3>
-                <p>
-                  Daughter of Mr. Triono & Mrs. Ratna Kumala, and was born in
-                  Sukoharjo on April 21, 1999
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          data-aos-duration="3000"
-          data-aos-once="true"
-          class="row story text-center"
-        >
-          <h3>Our Story</h3>
-          <div class="col">
-            <p
-              style="
-                text-align: justify;
-                padding-left: 20px;
-                padding-right: 20px;
-              "
-            >
-              We were high school friends. After graduated, we kept in touch
-              only through social media. Long story short, we started to catch
-              up and met again at a Keshi concert. Since then, we’ve been
-              talking more often and our relationship grew closer. After that,
-              Mas Aji confessed his love and Nikmah accepted his love too. We've
-              been through a lot together and decided to take our relationship
-              to a more serious commitment. And here we are, living happily ever
-              after! &lt;3
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="info" class="info">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <h2 data-aos="zoom-in" data-aos-duration="3000">Save The Date</h2>
-
-          <div
-            data-aos="fade-down"
-            data-aos-duration="3000"
-            class="col-md-12 card"
-          >
-            <div class="card-header">
-              <h4>wedding ceremony</h4>
-            </div>
-            <div class="card-body">
-              <h4 style="font-size: 4rem">Saturday</h4>
-              <div class="row justify-content-center">
-                <div>
-                  <p>
-                    October, 5 2024 <br />
-                    9 AM - 12 PM
-                  </p>
-                  <h5>Masjid Agung Madaniyah</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            data-aos="fade-down"
-            data-aos-duration="3000"
-            class="col-md-12 text-center card dresscode"
-          >
-            <div class="card-header">
-              <h4>Guest Dresscode</h4>
-            </div>
-            <div class="card-body">
-              <p>
-                We kindly encourage our guests to wear these colours on our
-                special day
-              </p>
-            </div>
-
-            <div
-              class="row justify-content-center"
-              style="margin-top: -20px; margin-bottom: 20px"
-            >
-              <div class="col-4 colour" style="background-color: #f6f5ec"></div>
-              <div class="col-4 colour" style="background-color: #ece6d3"></div>
-              <div class="col-4 colour" style="background-color: #c1b6a4"></div>
-              <div class="col-4 colour" style="background-color: #ad9476"></div>
-            </div>
-          </div>
-
-          <div
-            data-aos="fade-down"
-            data-aos-duration="3000"
-            class="col-md-12 text-center"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.8165648755785!2d110.93615547500308!3d-7.59493379241987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a191145e17c73%3A0x1c6e21a18b76c860!2sMasjid%20Agung%20Madaniyah%20Karanganyar!5e0!3m2!1sid!2sid!4v1725086407456!5m2!1sid!2sid"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              class="maps"
-            ></iframe>
-          </div>
-
-          <p data-aos="fade-up" data-aos-duration="3000" class="description">
-            we hope to see you soon our special day
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="wish" class="wish">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div
-            data-aos="flip-down"
-            data-aos-duration="2000"
-            class="col-md-8 col-10 text-center mb-5"
-          >
-            <h2>Best Wishes</h2>
-            <p>We kindly ask for your blessings for us.</p>
-          </div>
-
-          <div
-            data-aos="fade-up"
-            data-aos-duration="2000"
-            class="card-body border rounded-4 shadow p-3"
-          >
-            <div class="mb-3">
-              <label for="form-name" class="form-label">Name</label>
-              <input
-                type="text"
-                class="form-control shadow-sm rounded-4"
-                id="form-name"
-                placeholder="Write your name"
-              />
-            </div>
-
-            <div class="mb-3">
-              <label for="form-comment" class="form-label">Wishes</label>
-              <textarea
-                class="form-control shadow-sm rounded-4"
-                id="form-comment"
-                rows="4"
-                placeholder="Write your best wishes"
-              ></textarea>
-            </div>
-
-            <div class="d-grid">
-              <button
-                class="btn btn-primary btn-sm rounded-4 shadow m-1"
-                onclick="postComment()"
-              >
-                <i class="fa-solid fa-paper-plane me-1"></i>Send
-              </button>
-            </div>
-          </div>
-
-          <div
-            data-aos="fade-up"
-            data-aos-duration="2000"
-            class="my-3 pt-3"
-            id="comments"
-          >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col text-center">
-            <h2 class="font-arabic pt-4 px-2" style="font-size: 2rem">
-              اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙ
-            </h2>
-
-            <hr class="mt-3 mb-2" />
-
-            <small class="block"
-              >&copy; 2024 Aku Mau Nikah. All Rights Reserved.</small
-            >
-            <small class="block"
-              >Design by
-              <a href="https://instagram.com/suryaaji.s">@suryaaji.s</a> and
-              <a href="https://instagram.com/nikmahayatislam"
-                >@nikmahayatislam</a
-              >
-            </small>
-            <!-- 
-            <ul class="mt-3">
-              <li>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="bi bi-youtube"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="bi bi-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="bi bi-tiktok"></i></a>
-              </li>
-            </ul> -->
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <div id="audio-container">
-      <audio id="song" loop>
-        <source src="./assets/audio/keshi-warheaven-cut.mp3" type="audio/mp3" />
-      </audio>
-
-      <div class="audio-icon-wrapper" style="display: none">
-        <i class="bi bi-disc"></i>
+        <div class="home-img" id="home-img-lg"></div>
       </div>
     </div>
+
+    <div class="home-img home-img-sm"></div>
+    <div class="timeline hz-margin reveal">
+      <h2>
+        Celebrating Our Love <br />
+        With Those We Love
+      </h2>
+      <div class="timeline-container">
+        <div class="timeline-img"></div>
+        <div class="timings">
+          <h3>01.&nbsp &nbsp Ceremony</h3>
+          <div class="text">
+            Friday, Oct. 20, 2023 <br />
+            ITC Sonar Bangla, Kolkata
+          </div>
+          <h3>02.&nbsp &nbsp Reception</h3>
+          <div class="text">
+            Sunday, Oct. 22, 2023 <br />
+            Poddar Vihar, Kolkata
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v-reposition-container">
+      <div class="h-reposition-container">
+        <div id="story" class="hz-margin">
+          <h3 class="reveal">
+            Not Just an <br />
+            Ordinary Love Story
+          </h3>
+          <p class="text reveal">
+            We met on ferry. Not sure if the kids remember that one. His female housemates encouraged him to get on it -
+            he wasn't keen, but one night we ended up chatting and the next day we met up at the Tellypara Ghat. We
+            spent nine hours together by the river, and I bought him a cotton candy and he says that's how he knew I was
+            the one.
+          </p>
+        </div>
+
+        <div class="gallery hz-margin reveal">
+          <div class="gallery-img"></div>
+          <div class="gallery-img"></div>
+          <div class="gallery-img"></div>
+        </div>
+
+        <div class="quote reveal">
+          <h1>“To the world you are one person, but to one person you are the world”.</h1>
+          <div class="author text">Anonymous</div>
+        </div>
+
+        <div class="hands" id="parallax1"></div>
+
+        <div id="stay">
+          <h2 class="reveal">Travel and Stay</h2>
+          <div class="stay-container reveal">
+            <div class="stay-item">
+              <h3>
+                01. <br />
+                Getting There
+              </h3>
+              <div class="text">
+                Easy-to-follow <br />
+                directions to the venue
+              </div>
+              <div class="text links">MAP & DETAILS</div>
+            </div>
+            <div class="stay-item">
+              <h3>
+                02. <br />
+                Once You're There
+              </h3>
+              <div class="text">
+                Some fun things to do in <br />
+                the area
+              </div>
+              <div class="text links">OUR RECOMMENDATIONS</div>
+            </div>
+            <div class="stay-item">
+              <h3>
+                03. <br />
+                Where to Stay
+              </h3>
+              <div class="text">
+                Hotels and B&Bs <br />
+                to check out
+              </div>
+              <div class="text links">LODGING OPTIONS</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="registry">
+          <div class="registry-container reveal">
+            <h3>Promises</h3>
+            <div class="text">
+              I will provide welfare and happiness for you and the children that we bear and you shall offer me food and
+              help whenever it is required. Together, we will protect our children and home and stand as each other's
+              strength and courage. I will put every other person secodary to you. You make my like complete and promise
+              to respect you. God bless you, my best friend. I pray thee, may my presence fill our life with joy and
+              prospers.
+            </div>
+            <button class="huge-btn text">BLESS US</button>
+          </div>
+          <div class="registry-img registry-img-lg" id="parallax2"></div>
+        </div>
+        <div class="registry-img registry-img-sm"></div>
+
+        <div class="parting-message reveal">
+          <h1>Hope to See You!</h1>
+          <button class="huge-btn">RSVP</button>
+        </div>
+
+        <footer>
+          <h2>Give us a Call</h2>
+          <h2>Amandeep: 123-456-7890</h2>
+          <h2>Gurpreet: 123-456-7890</h2>
+          <div class="text">
+            © 2023 for Aman and Gur. Made by <a href="https://twitter.com/NathArchak" class="text">@NathArchak</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
   </body>
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-  <script src="assets/sakura/jquery-sakura.min.js"></script>
-  <!-- <script src="script.js"></script> -->
-
-  <script>
-    AOS.init();
-    const rootElement = document.querySelector(":root");
-    const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
-    const audioIcon = document.querySelector(".audio-icon-wrapper i");
-    const song = document.querySelector("#song");
-    const navbar = document.querySelector(".mynavbar");
-    const homeTitle = document.querySelector(".home-title");
-    const dataComment = document.querySelector("#comments");
-    let isPlaying = false;
-
-    function enableScroll() {
-      window.onscroll = function () {};
-      rootElement.style.scrollBehavior = "smooth";
-      navbar.style.visibility = "visible";
-      playAudio();
-      showConfetti();
-      getComment();
-    }
-
-    function disableScroll() {
-      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-      window.onscroll = function () {
-        window.scrollTo(scrollLeft, scrollTop);
-      };
-
-      rootElement.style.scrollBehavior = "auto";
-      navbar.style.visibility = "hidden";
-    }
-
-    function playAudio() {
-      song
-        .play()
-        .then(() => {
-          isPlaying = true;
-        })
-        .catch((error) => {
-          console.log("Autoplay failed:", error);
-        });
-    }
-
-    function sakuraFalling() {
-      $(document).ready(function () {
-        // Initialize sakura falling effect on the entire body
-        $("body").sakura("start", {
-          blowAnimations: [
-            "blow-soft-left",
-            "blow-soft-right",
-            "blow-hard-left",
-            "blow-hard-right",
-          ], // Horizontal movement animation
-          className: "sakura", // Class name for the petals
-          fallSpeed: 1, // Speed of falling petals (increase for faster)
-          maxSize: 14, // Maximum size of petals
-          minSize: 9, // Minimum size of petals
-          newOn: 200, // Interval for adding new petals (smaller = more frequent)
-          swayAnimations: ["sway-0", "sway-1", "sway-2"], // Adding more swaying animations for variety
-        });
-      });
-    }
-
-    function showConfetti() {
-      confetti({
-        origin: { y: 1 },
-        zIndex: 1057,
-        colors: ["#6d2932", "#805c61", "#7a0f1d"],
-      });
-
-      function animation() {
-        const duration = 60 * 1000;
-        const animationEnd = Date.now() + duration;
-        const colors = ["#FFC0CB", "#6d2932"];
-
-        const randomInRange = (min, max) => {
-          return Math.random() * (max - min) + min;
-        };
-
-        const heart = confetti.shapeFromPath({
-          path: "M167 72c19,-38 37,-56 75,-56 42,0 76,33 76,75 0,76 -76,151 -151,227 -76,-76 -151,-151 -151,-227 0,-42 33,-75 75,-75 38,0 57,18 76,56z",
-          matrix: [
-            0.03333333333333333, 0, 0, 0.03333333333333333, -5.566666666666666,
-            -5.533333333333333,
-          ],
-        });
-
-        (function frame() {
-          const timeLeft = animationEnd - Date.now();
-
-          colors.forEach((color) => {
-            confetti({
-              particleCount: 1,
-              startVelocity: 0,
-              ticks: Math.max(50, 75 * (timeLeft / duration)),
-              origin: {
-                x: Math.random(),
-                y: Math.abs(Math.random() - timeLeft / duration),
-              },
-              zIndex: 1057,
-              colors: [color],
-              shapes: [heart],
-              drift: randomInRange(-0.5, 0.5),
-              gravity: randomInRange(0.5, 1),
-              scalar: randomInRange(0.5, 1),
-            });
-          });
-
-          if (timeLeft > 0) {
-            requestAnimationFrame(frame);
-          }
-        })();
-      }
-
-      setTimeout(animation, 1500);
-    }
-
-    const animate = (svg, timeout, classes) => {
-      setTimeout(() => {
-        svg.classList.add(classes);
-      }, timeout);
-    };
-
-    audioIconWrapper.onclick = function () {
-      if (isPlaying) {
-        song.pause();
-        audioIcon.classList.remove("bi-disc");
-        audioIcon.classList.add("bi-pause-circle");
-      } else {
-        song
-          .play()
-          .then(() => {
-            audioIcon.classList.add("bi-disc");
-            audioIcon.classList.remove("bi-pause-circle");
-          })
-          .catch((error) => {
-            console.log("Playback failed:", error);
-          });
-      }
-
-      isPlaying = !isPlaying;
-    };
-
-    // Function to get comments from the API and display them
-    async function getComment() {
-      const url =
-        "https://an-wedding-nest-production.up.railway.app/api/comments";
-      try {
-        const response = await fetch(url, {
-          method: "GET",
-          mode: "cors", // Ensure you're in CORS mode
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
-
-        const comments = await response.json();
-        console.log(comments)
-
-        // Clear existing comments
-        dataComment.innerHTML = "";
-
-        // Reverse the array so the last comment comes first
-        comments.reverse();
-
-        // Loop through the comments and append them to the comments div
-        comments.forEach((comment) => {
-          const commentElement = document.createElement("div");
-          commentElement.classList.add("comment-item", "rounded");
-          commentElement.innerHTML = `
-        <h5>${comment.name}</h5>
-        <p>${comment.comment}</p>
-      `;
-          dataComment.appendChild(commentElement);
-        });
-      } catch (error) {
-        console.error(error.message);
-      }
-    }
-
-    // Function to post a comment
-    async function postComment() {
-      const url =
-        "https://an-wedding-nest-production.up.railway.app/api/comments";
-
-      // Get the values from the form inputs
-      const name = document.querySelector("#form-name").value;
-      const comment = document.querySelector("#form-comment").value;
-
-      if (!name || !comment) {
-        alert("Please enter both name and comment");
-        return;
-      }
-
-      try {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name: name, comment: comment }),
-        });
-
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
-
-        const json = await response.json();
-        console.log(json);
-
-        // Clear the form after submitting
-        document.querySelector("#form-name").value = "";
-        document.querySelector("#form-comment").value = "";
-
-        // Refresh the comments
-        getComment();
-      } catch (error) {
-        console.error(error.message);
-      }
-    }
-
-    disableScroll();
-    sakuraFalling();
-  </script>
-
-  <!-- Countdown -->
-  <script>
-    simplyCountdown(".simply-countdown", {
-      year: 2024, // required
-      month: 10, // required
-      day: 5, // required
-      hours: 9, // Default is 0 [0-23] integer
-      words: {
-        //words displayed into the countdown
-        days: { singular: "hari", plural: "hari" },
-        hours: { singular: "jam", plural: "jam" },
-        minutes: { singular: "menit", plural: "menit" },
-        seconds: { singular: "detik", plural: "detik" },
-      },
-    });
-  </script>
-
-  <!-- Deploy Config -->
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyDGiRRWqiZntdl1bYxk_MF7eGtmADeJq-A",
-      authDomain: "akumaunikahnih.firebaseapp.com",
-      projectId: "akumaunikahnih",
-      storageBucket: "akumaunikahnih.appspot.com",
-      messagingSenderId: "917578149360",
-      appId: "1:917578149360:web:a8eb3774ae7e82dcef8135",
-      measurementId: "G-0CMMLXFM9H",
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
 </html>
