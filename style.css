@@ -1,7 +1,7 @@
 :root {
-  --maroon: #6d2932;
+  --maroon: #c53838;
   --bg: #0a0a0a;
-  --shadow: 0 3px 3px rgb(0 0 0 / 0.5);
+  --shadow: 0 3px 3px rgb(0 0 0 / 0.3);
 }
 
 @font-face {
@@ -69,20 +69,12 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url(assets/img/bg/w1.jpeg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.8)),
+    url(assets/img/jm-red.jpg);
   background-size: cover;
   background-position: center;
   z-index: -1;
-  mask-image: linear-gradient(
-    to bottom,
-    black,
-    black,
-    black,
-    black,
-    black,
-    black,
-    transparent
-  );
+  mask-image: linear-gradient(to bottom, black, black, black, black, black, black, transparent);
 }
 
 .hero {
@@ -132,18 +124,12 @@ body {
 }
 
 .home {
-  background-image: url(assets/img/bg/w2.jpeg);
+  /* background-image: url(assets/img/jm-red-1.jpg); */
   background-size: cover;
   min-height: 100vh;
   padding-top: 7rem;
   padding-bottom: 5rem;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 }
 
 .home h2,
@@ -234,13 +220,7 @@ body {
   padding-top: 15rem;
   padding-bottom: 10rem;
   min-height: 100vh;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 20%,
-    black 80%,
-    transparent
-  );
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
 
 .info h2 {
@@ -329,22 +309,33 @@ h5 {
   font-family: "eunoia";
 }
 
+.gallery {
+  background-image: url(assets/img/bg/w3.jpeg);
+  background-size: cover;
+  color: black;
+  padding-top: 15rem;
+  padding-bottom: 10rem;
+  min-height: 100vh;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+.gifts {
+  background-image: url(assets/img/bg/w3.jpeg);
+  background-size: cover;
+  color: black;
+  padding-top: 15rem;
+  padding-bottom: 10rem;
+  min-height: 100vh;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
 .wish {
   padding-top: 10rem;
   padding-bottom: 8rem;
   padding-left: 30px;
   padding-right: 30px;
   background-image: url(assets/img/bg/w3.jpeg);
-  mask-image: linear-gradient(
-    to top,
-    black,
-    black,
-    black,
-    black,
-    black,
-    black,
-    transparent
-  );
+  mask-image: linear-gradient(to top, black, black, black, black, black, black, transparent);
 }
 
 .wish h2 {
@@ -385,7 +376,7 @@ h5 {
 }
 
 .wish .comment-item h5 {
-  font-family: 'Sofia-sans';
+  font-family: "Sofia-sans";
   text-decoration: underline;
   font-size: 20px;
 }
