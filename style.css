@@ -1,27 +1,48 @@
 :root {
-  --maroon: #c53838;
+  --maroon: #752020;
   --bg: #0a0a0a;
+  --cream: #ffffe3;
   --shadow: 0 3px 3px rgb(0 0 0 / 0.3);
 }
 
 @font-face {
-  font-family: perfect-bomber;
-  src: url(./assets/font/perfectbomber.ttf);
+  font-family: caudex;
+  src: url(./assets/font/Caudex/Caudex-Regular.ttf);
 }
 
 @font-face {
-  font-family: alagambe;
-  src: url(./assets/font/alagambe.otf);
+  font-family: pinyon-script;
+  src: url(./assets/font/Pinyon_Script/PinyonScript-Regular.ttf);
 }
 
 @font-face {
-  font-family: boldest-enough;
-  src: url(./assets/font/boldest-enough.otf);
+  font-family: roboto;
+  src: url(./assets/font/Roboto/Roboto-Regular.ttf);
 }
 
 @font-face {
-  font-family: eunoia;
-  src: url(./assets/font/eunoia.ttf);
+  font-family: aboreto;
+  src: url(./assets/font/Aboreto/Aboreto-Regular.ttf);
+}
+
+@font-face {
+  font-family: vidaloka;
+  src: url(./assets/font/Vidaloka/Vidaloka-Regular.ttf);
+}
+
+@font-face {
+  font-family: alike-angular;
+  src: url(./assets/font/Alike_Angular/AlikeAngular-Regular.ttf);
+}
+
+@font-face {
+  font-family: vollkorn;
+  src: url(./assets/font/Vollkorn/Vollkorn-Regular.ttf);
+}
+
+@font-face {
+  font-family: elsie;
+  src: url(./assets/font/Elsie/Elsie-Regular.ttf);
 }
 
 @keyframes fadeIn {
@@ -57,7 +78,7 @@
 
 body {
   font-size: 1.2rem;
-  font-family: "Sofia Sans", sans-serif;
+  font-family: "alike-angular", sans-serif;
   letter-spacing: 2px;
   font-weight: 700;
 }
@@ -69,12 +90,22 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.8)),
-    url(assets/img/jm-red.jpg);
+  /* background-image: url(assets/img/jm-red.jpg); */
   background-size: cover;
   background-position: center;
   z-index: -1;
-  mask-image: linear-gradient(to bottom, black, black, black, black, black, black, transparent);
+
+  /* Gradient + blur overlay */
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  filter: blur(2px); /* optional soft blur */
+
+  /* Optional: keep the fade to transparent at bottom */
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .hero {
@@ -86,11 +117,11 @@ body {
 .hero h3,
 .hero p {
   text-shadow: var(--shadow);
-  color: var(--maroon);
+  color: var(--cream);
 }
 
 .hero h1 {
-  font-family: "perfect-bomber", cursive;
+  font-family: "pinyon-script", cursive;
   font-size: 6rem;
 }
 
@@ -109,8 +140,8 @@ body {
 }
 
 .hero a:hover {
-  background-color: #491b22;
-  color: white;
+  background-color: var(--maroon);
+  color: var(--cream);
 }
 
 .mynavbar {
@@ -123,35 +154,89 @@ body {
   color: white;
 }
 
-.home {
-  /* background-image: url(assets/img/jm-red-1.jpg); */
-  background-size: cover;
-  min-height: 100vh;
-  padding-top: 7rem;
-  padding-bottom: 5rem;
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-}
-
 .home h2,
 .info h2,
 .gallery h2,
 .wish h2,
 .gifts h2 {
   color: var(--maroon);
-  font-family: "eunoia";
+  font-family: "caudex";
   font-size: 5rem;
   font-weight: bold;
   text-shadow: 0 0 10px;
 }
 
-.home h3 {
-  color: #444;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.home {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+  z-index: 0;
 }
 
-.home h2 {
-  font-size: 70px;
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background-image: url(assets/img/jm-red-1.jpg); */
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    /* transparan atas */ rgba(0, 0, 0, 1) 30%,
+    /* penuh di tengah */ rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0) 100% /* transparan bawah */
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  z-index: -2;
+}
+
+.home h3 {
+  color: var(--maroon);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: "pinyon-script", cursive;
+}
+
+.story {
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.story img {
+  width: 110%;
+  height: auto;
+  display: block;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  margin-left: -5%;
+}
+
+/* Tambahkan center pada isi paragraf */
+.story-detail p {
+  font-size: 15px;
+  font-family: "elsie", cursive;
+  line-height: 2;
+  color: var(--maroon);
+  padding: 2rem 2rem 0;
+  text-align: center; /* ✅ bikin teks rata tengah */
 }
 
 .home .couple {
@@ -171,48 +256,6 @@ body {
   width: 100%;
 }
 
-.home .heart {
-  width: 50px;
-  height: 50px;
-  padding-top: 5px;
-  background-color: white;
-  display: flex;
-  border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(50px);
-  z-index: 1;
-}
-
-.home .heart i {
-  margin: auto;
-  color: var(--maroon);
-}
-
-.home .story {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.home .story h3 {
-  font-family: "alagambe";
-  font-weight: bold;
-  font-size: 2.4rem;
-  color: var(--maroon);
-}
-
-.home .story p {
-  font-size: 22px;
-  font-weight: 500;
-}
-
-.home a {
-  color: white;
-  background-color: var(--maroon);
-  box-shadow: var(--shadow);
-}
-
 .info {
   background-image: url(assets/img/bg/w3.jpeg);
   background-size: cover;
@@ -220,7 +263,13 @@ body {
   padding-top: 15rem;
   padding-bottom: 10rem;
   min-height: 100vh;
-  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
 }
 
 .info h2 {
@@ -316,7 +365,13 @@ h5 {
   padding-top: 15rem;
   padding-bottom: 10rem;
   min-height: 100vh;
-  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
 }
 
 .gifts {
@@ -326,7 +381,13 @@ h5 {
   padding-top: 15rem;
   padding-bottom: 10rem;
   min-height: 100vh;
-  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
 }
 
 .wish {
@@ -335,7 +396,16 @@ h5 {
   padding-left: 30px;
   padding-right: 30px;
   background-image: url(assets/img/bg/w3.jpeg);
-  mask-image: linear-gradient(to top, black, black, black, black, black, black, transparent);
+  mask-image: linear-gradient(
+    to top,
+    black,
+    black,
+    black,
+    black,
+    black,
+    black,
+    transparent
+  );
 }
 
 .wish h2 {
@@ -541,14 +611,6 @@ footer li {
     top: -1%;
   }
 
-  .home .couple {
-    margin-top: 20px;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-bottom: 20px;
-    border-radius: 10px;
-  }
-
   .home h2 {
     font-size: 4.6rem;
   }
@@ -558,13 +620,18 @@ footer li {
     margin-bottom: 50px;
   }
 
-  .home .story h3 {
-    margin-bottom: -5px;
-  }
-
   .home .story p {
     font-size: 1.2rem;
-    padding: 15px;
+    padding-right: 4vw;
+    padding-left: 4vw;
+  }
+
+  .home .couple {
+    margin-top: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+    border-radius: 10px;
   }
 
   .info {
