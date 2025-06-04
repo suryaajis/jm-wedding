@@ -83,6 +83,29 @@ body {
   font-weight: 700;
 }
 
+/*
+.screen {
+  position: relative;
+  z-index: 0;
+}
+
+.screen::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/bg/bg-3.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  z-index: -1;
+}
+*/
+
 .hero::before {
   content: "";
   position: absolute;
@@ -90,7 +113,7 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  /* background-image: url(assets/img/jm-red.jpg); */
+  background-image: url(assets/img/jm-red.jpg);
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -98,13 +121,13 @@ body {
   /* Gradient + blur overlay */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
-  filter: blur(2px); /* optional soft blur */
+  filter: blur(1px); /* optional soft blur */
 
   /* Optional: keep the fade to transparent at bottom */
   mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1) 70%,
-    rgba(0, 0, 0, 0)
+    rgba(0, 0, 0, 1)
   );
 }
 
@@ -171,7 +194,7 @@ body {
   overflow: hidden;
   min-height: 100vh;
   padding-top: 7rem;
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
   z-index: 0;
 }
 
@@ -179,25 +202,25 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  /* background-image: url(assets/img/jm-red-1.jpg); */
+  background-image: url(assets/bg/bg-2.jpeg);
   background-size: cover;
   background-position: center;
-  filter: blur(5px);
+  filter: blur(3px);
 
   mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    /* transparan atas */ rgba(0, 0, 0, 1) 30%,
-    /* penuh di tengah */ rgba(0, 0, 0, 1) 70%,
-    rgba(0, 0, 0, 0) 100% /* transparan bawah */
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0.7) 100%
   );
 
   -webkit-mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 0%,
     rgba(0, 0, 0, 1) 30%,
     rgba(0, 0, 0, 1) 70%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.7) 100%
   );
 
   z-index: -2;
@@ -239,41 +262,60 @@ body {
   text-align: center; /* ✅ bikin teks rata tengah */
 }
 
-.home .couple {
-  margin-top: 50px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  border-radius: 10px;
+.couple {
+  background-color: transparent;
+  color: white;
+  margin-top: 10%;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5)
 }
 
-.home .couple h3 {
-  font-family: "perfect-bomber";
-  font-size: 3.4rem;
+.intro {
+  font-family: "vollkorn", cursive;
+  text-align: center;
+  margin-bottom: 8%;
   color: var(--maroon);
 }
 
-.home .couple img {
-  width: 100%;
+.couple h4 {
+  font-weight: bold;
 }
 
 .info {
-  background-image: url(assets/img/bg/w3.jpeg);
-  background-size: cover;
+  /* background-image: url(assets/img/bg/w3.jpeg);
+  background-size: cover; */
   color: black;
-  padding-top: 15rem;
-  padding-bottom: 10rem;
+  padding: 0;
   min-height: 100vh;
-  mask-image: linear-gradient(
+  /* mask-image: linear-gradient(
     to bottom,
     transparent,
     black 20%,
     black 80%,
     transparent
-  );
+  ); */
 }
 
-.info h2 {
-  margin-bottom: 50px;
+.info .countdown {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%),
+    url(assets/img/jm-white.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  text-align: center; 
+}
+
+.info .countdown h2 {
+  font-family: "pinyon-script";
+  font-size: 3rem;
+  color: white;
+  margin-top: 10px;
 }
 
 .info .alamat {
@@ -505,18 +547,6 @@ footer li {
 /* Media Query */
 /* Extra large */
 @media (max-width: 1200px) {
-  .home .heart {
-    transform: translateX(-50%) translateY(45px);
-  }
-
-  .home .couple h3 {
-    font-size: 2.8rem;
-  }
-
-  .home .couple p {
-    font-size: 1.1rem;
-  }
-
   .home .story p {
     font-size: 1.2rem;
     margin-bottom: 30px;
@@ -534,7 +564,7 @@ footer li {
   }
 
   .simply-countdown > .simply-section {
-    padding: 70px;
+    padding: 10px;
   }
 
   .home .heart {
@@ -582,7 +612,7 @@ footer li {
   }
 
   .simply-countdown > .simply-section {
-    padding: 60px;
+    padding: 10px;
     margin: 5px;
   }
 
@@ -626,21 +656,13 @@ footer li {
     padding-left: 4vw;
   }
 
-  .home .couple {
-    margin-top: 20px;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-bottom: 20px;
-    border-radius: 10px;
-  }
-
   .info {
     height: 100%;
     padding-bottom: 10rem;
   }
 
-  .info h2 {
-    margin-bottom: 10px;
+  .info .countdown h2 {
+    font-family: "pinyon-script";
   }
 
   .info .card {
