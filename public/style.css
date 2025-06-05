@@ -1,0 +1,786 @@
+:root {
+  --maroon: #752020;
+  --bg: #0a0a0a;
+  --cream: #ffffe3;
+  --shadow: 0 3px 3px rgb(0 0 0 / 0.3);
+}
+
+@font-face {
+  font-family: perfect-bomber;
+  src: url(./assets/font/perfectbomber.ttf);
+}
+
+@font-face {
+  font-family: alagambe;
+  src: url(./assets/font/alagambe.otf);
+}
+
+@font-face {
+  font-family: boldest-enough;
+  src: url(./assets/font/boldest-enough.otf);
+}
+
+@font-face {
+  font-family: eunoia;
+  src: url(./assets/font/eunoia.ttf);
+}
+
+@font-face {
+  font-family: caudex;
+  src: url(./assets/font/Caudex/Caudex-Regular.ttf);
+}
+
+@font-face {
+  font-family: pinyon-script;
+  src: url(./assets/font/Pinyon_Script/PinyonScript-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(./assets/font/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: aboreto;
+  src: url(./assets/font/Aboreto/Aboreto-Regular.ttf);
+}
+
+@font-face {
+  font-family: vidaloka;
+  src: url(./assets/font/Vidaloka/Vidaloka-Regular.ttf);
+}
+
+@font-face {
+  font-family: alike-angular;
+  src: url(./assets/font/Alike_Angular/AlikeAngular-Regular.ttf);
+}
+
+@font-face {
+  font-family: vollkorn;
+  src: url(./assets/font/Vollkorn/Vollkorn-Regular.ttf);
+}
+
+@font-face {
+  font-family: elsie;
+  src: url(./assets/font/Elsie/Elsie-Regular.ttf);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes love {
+  50% {
+    transform: translateY(1rem);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 5s;
+}
+
+.fade-in-10 {
+  animation: fadeIn 10s;
+}
+
+.animate-love {
+  animation: love 5s ease-in-out infinite;
+}
+
+.sakura-falling {
+  z-index: 1;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: "alike-angular", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/*
+.screen {
+  position: relative;
+  z-index: 0;
+}
+
+.screen::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/bg/bg-3.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  z-index: -1;
+}
+*/
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(assets/img/jm-red.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+
+  /* Gradient + blur overlay */
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  filter: blur(1px); /* optional soft blur */
+
+  /* Optional: keep the fade to transparent at bottom */
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 1)
+  );
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
+
+.hero h1,
+.hero h3,
+.hero p {
+  text-shadow: var(--shadow);
+  color: var(--cream);
+}
+
+.hero h1 {
+  font-family: "pinyon-script", cursive;
+  font-size: 6rem;
+}
+
+.hero h4 {
+  font-size: 1.6rem;
+}
+
+.hero p {
+  font-size: 1.4rem;
+}
+
+.hero a {
+  color: white;
+  background-color: var(--maroon);
+  box-shadow: var(--shadow);
+}
+
+.hero a:hover {
+  background-color: var(--maroon);
+  color: var(--cream);
+}
+
+.mynavbar {
+  background-color: #6d29327e;
+  backdrop-filter: blur(4px);
+}
+
+.mynavbar i,
+.mynavbar span {
+  color: white;
+}
+
+.home h2,
+.info h2,
+.gallery h2,
+.wish h2,
+.gifts h2 {
+  color: var(--maroon);
+  font-family: "caudex";
+  font-size: 5rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px;
+}
+
+.home {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 7rem;
+  padding-bottom: 10rem;
+  z-index: 0;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(assets/bg/ilustrasi-2.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+
+  z-index: -2;
+}
+
+.home h3 {
+  color: var(--maroon);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: "pinyon-script", cursive;
+}
+
+.story {
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  margin: 0 auto;
+}
+
+.story img {
+  width: 110%;
+  height: auto;
+  display: block;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  margin-left: -5%;
+  margin-top: -30%;
+}
+
+.story-detail p {
+  font-size: 15px;
+  font-family: "elsie", cursive;
+  line-height: 1.5;
+  color: var(--maroon);
+  padding: 2rem 2rem 0;
+  text-align: center;
+}
+
+.couple {
+  background-color: transparent;
+  color: white;
+  margin-top: 10%;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.intro {
+  font-family: "vollkorn", cursive;
+  text-align: center;
+  margin-bottom: 8%;
+  color: var(--maroon);
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.intro p {
+  font-size: 1.4rem;
+  text-shadow: var(--shadow);
+}
+
+.couple h4 {
+  font-weight: bold;
+}
+
+.screen {
+  background: url("assets/bg/ilustrasi-1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.info {
+  color: black;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.info .countdown {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%),
+    url(assets/img/jm-white.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+.info .countdown h2 {
+  font-family: "pinyon-script";
+  font-size: 3rem;
+  color: white;
+  margin-top: 10px;
+}
+
+.invitation {
+  font-family: "Georgia", serif;
+  width: 100%;
+  color: #f5ece1;
+  padding: 5% 0%;
+}
+
+.invitation-card {
+  background-color: #752020d2;
+  border-radius: 15%;
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 30px 20px;
+  text-align: center;
+  border: 3px solid #e2c8b1;
+  font-family: 'elsie', cursive;
+}
+
+.invitation-card h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.invitation-card h2 {
+  font-size: 3rem;
+  font-family: "eunoia", cursive;
+  color: #f0d9c0;
+  margin: 20px 0 10px;
+}
+
+.invitation-card .date {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f3cfa9;
+}
+
+.divider {
+  width: 50px;
+  height: 2px;
+  background-color: #f5ece1;
+  margin: 20px auto;
+}
+
+.location-icon {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.google-maps-button {
+  background-color: #f5ece1;
+  color: #5a2d2d;
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.google-maps-button:hover {
+  background-color: #e4d1b9;
+  text-decoration: none;
+}
+
+.gallery {
+  background-color: rgba(255,255,255,0.8);
+  color: black;
+  padding-top: 15rem;
+  padding-bottom: 10rem;
+  min-height: 100vh;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    black 100%
+  );
+}
+
+.gifts {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  font-family: "elsie", serif;
+  width: 100%;
+  color: #f5ece1;
+  padding: 5% 0%;
+}
+
+.gift-card {
+  background-color: #752020d2;
+  border-radius: 30px;
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 30px 10px;
+  text-align: center;
+  border: 3px solid #e2c8b1;
+  font-family: 'elsie', cursive;
+}
+
+.gift-card h2 {
+  font-size: 3rem;
+  font-family: "eunoia", cursive;
+  color: #f0d9c0;
+  margin: 20px 0 10px;
+}
+
+.show-button {
+  background-color: #f5ece1;
+  color: #5a2d2d;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+}
+
+.show-button:hover {
+  background-color: #e4d1b9;
+}
+
+
+.gift-card .card-body {
+  background: linear-gradient(to right, #ffffff, #f9f9f9);
+  color: #5a2d2d;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.card-number {
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+}
+
+.atm-card {
+  background-image: url("assets/bg/bg-atm.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+}
+
+.clipboard {
+  background-color: var(--maroon);
+  color: white;
+  border-radius: 5px;
+  font-family: 'roboto';
+}
+
+.list-group-item {
+  font-size: 1rem;
+}
+
+
+.wish {
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-image: url(assets/img/bg/w3.jpeg);
+  mask-image: linear-gradient(
+    to top,
+    black,
+    black,
+    black,
+    black,
+    black,
+    black,
+    transparent
+  );
+}
+
+.wish h2 {
+  font-size: 4.5rem;
+}
+
+.wish p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: black;
+}
+
+.wish .card-body {
+  background-color: #eee9e3;
+}
+
+.wish form label {
+  color: black;
+}
+
+.wish button {
+  background-color: var(--maroon);
+  color: white;
+  border: 1px solid var(--maroon);
+}
+
+.wish button:hover {
+  background-color: white;
+  color: var(--maroon);
+  border: 1px solid white;
+}
+
+.wish .comment-item {
+  background-color: #eee9e3;
+  box-shadow: var(--shadow);
+  margin: 20px;
+  padding: 20px;
+}
+
+.wish .comment-item h5 {
+  font-family: "Sofia-sans";
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+footer {
+  padding: 3rem;
+  background-color: var(--maroon);
+  color: white;
+  height: 400px;
+}
+
+footer a {
+  color: var(--bg);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer li {
+  list-style: none;
+  display: inline;
+  margin: 0.5rem;
+}
+
+.audio-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  font-size: 4rem;
+  position: fixed;
+  bottom: 7.5rem;
+  right: 2rem;
+  cursor: pointer;
+  color: white;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  animation: rotating 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media Query */
+/* Extra large */
+@media (max-width: 1200px) {
+  .home .story p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .simply-countdown > .simply-section > .simply-amount {
+    font-size: 5px;
+  }
+}
+
+/* laptop */
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 10px;
+  }
+
+  .home .heart {
+    display: none;
+  }
+
+  .timeline::before {
+    left: 60px;
+  }
+
+  .timeline li .timeline-image {
+    left: 15px;
+    margin-left: 45px;
+    top: 16px;
+  }
+
+  .timeline li .timeline-panel {
+    width: calc((100% - 200px));
+    float: right;
+  }
+
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  .hero .animation {
+    top: 0;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .mynavbar .nav-link {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .sticky-top {
+    overflow: hidden;
+  }
+
+  .timeline li .timeline-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* mobile phone */
+@media (max-width: 576px) {
+  html {
+    font-size: 60%;
+  }
+
+  .hero .animation {
+    top: -1%;
+  }
+
+  .home h2 {
+    font-size: 4.6rem;
+  }
+
+  .home .story {
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+
+  .home .story p {
+    font-size: 1.2rem;
+    padding-right: 4vw;
+    padding-left: 4vw;
+  }
+
+  .info {
+    height: 100%;
+    padding-bottom: 10rem;
+  }
+
+  .info .countdown h2 {
+    font-family: "pinyon-script";
+  }
+
+  .info .card {
+    margin: 10px 0;
+    width: 85%;
+  }
+
+  .info .card-body p {
+    font-size: 2rem;
+  }
+
+  .info .card-body h5 {
+    font-size: 2rem;
+  }
+
+  .info .maps {
+    width: 90%;
+    height: 100%;
+    margin-bottom: 50px;
+  }
+
+  .info .dresscode .card-body p {
+    font-size: 10px;
+    margin-top: -10px;
+  }
+
+  .info .dresscode .colour {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    margin: 8px;
+  }
+
+  .info .description {
+    font-size: 2.4rem;
+    width: 90%;
+  }
+
+  .wish {
+    padding-top: 5rem;
+  }
+
+  .wish .comment-item {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .wish .comment-item h5 {
+    font-size: 14px;
+  }
+
+  footer {
+    height: 100%;
+    padding-bottom: 80px;
+  }
+}
