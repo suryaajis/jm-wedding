@@ -222,7 +222,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(assets/bg/ilustrasi-4.jpg);
+  background-image: url(assets/bg/ilustrasi-2.jpg);
   background-size: cover;
   background-position: center;
   filter: blur(3px);
@@ -308,19 +308,18 @@ body {
   font-weight: bold;
 }
 
+.screen {
+  background: url("assets/bg/ilustrasi-1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .info {
-  /* background-image: url(assets/img/bg/w3.jpeg);
-  background-size: cover; */
   color: black;
   padding: 0;
   min-height: 100vh;
-  /* mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 20%,
-    black 80%,
-    transparent
-  ); */
 }
 
 .info .countdown {
@@ -347,9 +346,6 @@ body {
 }
 
 .invitation {
-  background: url("assets/bg/ilustrasi-1.jpg");
-  background-size: cover;
-  background-position: center;
   font-family: "Georgia", serif;
   width: 100%;
   color: #f5ece1;
@@ -415,8 +411,7 @@ body {
 }
 
 .gallery {
-  background-image: url(assets/img/bg/w3.jpeg);
-  background-size: cover;
+  background-color: rgba(255,255,255,0.8);
   color: black;
   padding-top: 15rem;
   padding-bottom: 10rem;
@@ -426,25 +421,81 @@ body {
     transparent,
     black 20%,
     black 80%,
-    transparent
+    black 100%
   );
 }
 
 .gifts {
-  background-image: url(assets/img/bg/w3.jpeg);
-  background-size: cover;
-  color: black;
-  padding-top: 15rem;
-  padding-bottom: 10rem;
-  min-height: 100vh;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 20%,
-    black 80%,
-    transparent
-  );
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  font-family: "elsie", serif;
+  width: 100%;
+  color: #f5ece1;
+  padding: 5% 0%;
 }
+
+.gift-card {
+  background-color: #752020d2;
+  border-radius: 30px;
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 30px 10px;
+  text-align: center;
+  border: 3px solid #e2c8b1;
+  font-family: 'elsie', cursive;
+}
+
+.gift-card h2 {
+  font-size: 3rem;
+  font-family: "eunoia", cursive;
+  color: #f0d9c0;
+  margin: 20px 0 10px;
+}
+
+.show-button {
+  background-color: #f5ece1;
+  color: #5a2d2d;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+}
+
+.show-button:hover {
+  background-color: #e4d1b9;
+}
+
+
+.gift-card .card-body {
+  background: linear-gradient(to right, #ffffff, #f9f9f9);
+  color: #5a2d2d;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.card-number {
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+}
+
+.atm-card {
+  background-image: url("assets/bg/bg-atm.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+}
+
+.clipboard {
+  background-color: var(--maroon);
+  color: white;
+  border-radius: 5px;
+  font-family: 'roboto';
+}
+
+.list-group-item {
+  font-size: 1rem;
+}
+
 
 .wish {
   padding-top: 10rem;
