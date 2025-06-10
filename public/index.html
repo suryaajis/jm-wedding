@@ -134,7 +134,7 @@
             <div class="col-12 intro" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
               <p>
                 <strong>Assalamu’alaikum Wr. Wb.</strong><br />
-                Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, inyaaAllah kami akan menyelenggarakan acara
+                Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, insyaAllah kami akan menyelenggarakan acara
                 pernikahan:
               </p>
             </div>
@@ -579,6 +579,7 @@
     // Function to get comments from the API and display them
     async function getComment() {
       const url = "https://wedding-backend-wp1x.onrender.com/api/comments";
+      console.log(url);
       try {
         const response = await fetch(url, {
           method: "GET",
@@ -587,6 +588,8 @@
             "Content-Type": "application/json",
           },
         });
+
+        console.log(response);
 
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);

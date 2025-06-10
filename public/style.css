@@ -199,10 +199,6 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  /* background-image: url(assets/bg/ilustrasi-2.jpg);
-  background-size: cover;
-  background-position: center; */
-  /* filter: blur(2px); */
 
   mask-image: linear-gradient(
     to bottom,
@@ -294,6 +290,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .screen {
+    background-attachment: scroll;
+  }
 }
 
 .info {
@@ -543,7 +545,7 @@ body {
 
 .wish .comment-item h5 {
   font-family: "caudex";
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
