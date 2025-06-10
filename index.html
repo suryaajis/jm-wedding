@@ -73,6 +73,11 @@
         <h3>The Wedding Of</h3>
         <h1>Amin & Mela</h1>
         <p>Minggu, 22 Juni 2025</p>
+
+        <h4 style="display: none; font-size: 1rem; margin: 20px 0 10px; font-family: 'vollkorn'">
+          Kepada Yth:<strong style="font-family: 'aboreto'; font-size: 1.4rem"></strong>
+        </h4>
+
         <a href="#home" class="btn btn-lg mt-2" onClick="enableScroll()">
           <i class="fas fa-envelope-open-text me-2"></i> Open Invitation
         </a>
@@ -308,11 +313,11 @@
             <div class="col-md-6 collapse mt-4" id="giftCollapse">
               <!-- BRI Card -->
               <div class="card mb-3 shadow atm-card">
-                <h4 class="card-number fs-5 fw-bold" style="font-family: 'alike-angular';">123456</h4>
+                <h4 class="card-number fs-5 fw-bold" style="font-family: 'alike-angular'">BCA - 0112829499</h4>
                 <div class="card-name text-muted">Melati Pinaring Gusti</div>
                 <button
                   class="btn btn-sm btn-light mt-2 clipboard"
-                  onclick="navigator.clipboard.writeText('123456')"
+                  onclick="navigator.clipboard.writeText('0112829499')"
                 >
                   Copy
                 </button>
@@ -338,12 +343,22 @@
     <section id="wish" class="wish">
       <div class="container">
         <div class="row justify-content-center">
-          <div data-aos="fade-in" data-aos-duration="2000" data-aos-once="true" class="col-md-8 col-10 text-center mb-5">
+          <div
+            data-aos="fade-in"
+            data-aos-duration="2000"
+            data-aos-once="true"
+            class="col-md-8 col-10 text-center mb-5"
+          >
             <h2>Best Wishes</h2>
             <p>Sampaikan doa dan ucapan terbaik anda.</p>
           </div>
 
-          <div data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" class="card-body border rounded-4 shadow p-3">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            data-aos-once="true"
+            class="card-body border rounded-4 shadow p-3"
+          >
             <div class="mb-3">
               <label for="form-name" class="form-label">Name</label>
               <input
@@ -371,7 +386,7 @@
             </div>
           </div>
 
-          <div data-aos="fade-up" data-aos-duration="2000" class="my-3 pt-3" id="comments"></div>
+          <div data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" class="my-3 pt-3" id="comments"></div>
         </div>
       </div>
     </section>
@@ -563,7 +578,7 @@
 
     // Function to get comments from the API and display them
     async function getComment() {
-      const url = "https://an-wedding-nest-production.up.railway.app/api/comments";
+      const url = "https://wedding-backend-wp1x.onrender.com/api/comments";
       try {
         const response = await fetch(url, {
           method: "GET",
@@ -591,9 +606,9 @@
           const commentElement = document.createElement("div");
           commentElement.classList.add("comment-item", "rounded");
           commentElement.innerHTML = `
-        <h5>${comment.name}</h5>
-        <p>${comment.comment}</p>
-      `;
+          <h5>${comment.name}</h5>
+          <p>${comment.comment}</p>
+        `;
           dataComment.appendChild(commentElement);
         });
       } catch (error) {
@@ -603,7 +618,7 @@
 
     // Function to post a comment
     async function postComment() {
-      const url = "https://an-wedding-nest-production.up.railway.app/api/comments";
+      const url = "https://wedding-backend-wp1x.onrender.com/api/comments";
 
       // Get the values from the form inputs
       const name = document.querySelector("#form-name").value;
@@ -661,6 +676,18 @@
           .catch((err) => console.log("Playback error:", err));
       }
     });
+  </script>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get("to") || "";
+    const h4Container = document.querySelector(".hero h4");
+    const namaContainer = document.querySelector(".hero strong");
+
+    if (nama && nama !== "") {
+      h4Container.style.display = "block";
+      namaContainer.innerHTML = `<br>${nama}`.replace(/ ,$/, ",");
+    }
   </script>
 
   <!-- Countdown -->

@@ -131,6 +131,7 @@ body {
 
 .hero h1,
 .hero h3,
+.hero h4,
 .hero p {
   text-shadow: var(--shadow);
   color: var(--cream);
@@ -281,7 +282,6 @@ body {
   text-shadow: 0 1px 3px rgb(255 255 255 / 0.5);
   font-weight: bold;
 }
-
 
 .couple h4 {
   font-weight: bold;
@@ -518,6 +518,10 @@ body {
   color: black;
 }
 
+.wish form {
+  font-family: 'elsie';
+}
+
 .wish button {
   background-color: var(--maroon);
   color: white;
@@ -533,14 +537,20 @@ body {
 .wish .comment-item {
   background-color: #eee9e3;
   box-shadow: var(--shadow);
-  margin: 20px;
-  padding: 20px;
+  margin: 10px 20px 10px;
+  padding: 15px 20px 5px;
 }
 
 .wish .comment-item h5 {
-  font-family: "Sofia-sans";
-  text-decoration: underline;
-  font-size: 20px;
+  font-family: "caudex";
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.wish .comment-item p {
+  font-family: 'vollkorn';
+  font-size: 11px;
+  font-weight: 300;
 }
 
 footer {
@@ -601,7 +611,6 @@ footer li {
     transform: rotate(360deg);
   }
 }
-
 
 /* Media Query */
 /* Extra large */
