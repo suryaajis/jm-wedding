@@ -3,10 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Amin & Mela</title>
+    <title>Amin & Mela Wedding</title>
     <link rel="icon" href="assets/icon/favicon.ico" type="image/x-icon" />
-    <!-- <link rel="icon" href="assets/img/favicon.png" type="image/png" />
-    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" /> -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link
@@ -191,14 +189,8 @@
 
       <section id="info" class="info">
         <div class="countdown">
-          <!-- <video autoplay muted loop id="background-video">
-            <source src="assets/video/wedding.mp4" type="video/mp4" />
-          </video> -->
-
-          <div class="content">
-            <h2>Counting the Days</h2>
-            <div class="simply-countdown"></div>
-          </div>
+          <h2>Counting the Days</h2>
+          <div class="simply-countdown"></div>
         </div>
 
         <div class="justify-content-center text-center invitation">
@@ -407,7 +399,7 @@
     </footer>
 
     <div id="audio-container">
-      <audio id="song" loop>
+      <audio id="song" preload="auto" loop>
         <source src="./assets/audio/lesungpipi.mp3" type="audio/mp3" />
       </audio>
 
@@ -469,11 +461,11 @@
       audioIconWrapper.style.display = "flex";
       audioIcon.classList.add("bi-disc", "spin");
       audioIcon.classList.remove("bi-pause-circle");
-      // song.currentTime = 87;
-      song.currentTime = 6;
+      
       song
         .play()
         .then(() => {
+          song.currentTime = 6;
           isPlaying = true;
         })
         .catch((error) => {
