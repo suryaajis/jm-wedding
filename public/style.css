@@ -114,7 +114,7 @@ body {
 /* Hanya iOS (Safari) */
 @supports (-webkit-overflow-scrolling: touch) {
   .screen {
-    background-size: contain !important;
+    background-size: contain;
     background-attachment: scroll !important;
   }
 }
@@ -181,8 +181,8 @@ body {
 .mynavbar {
   background-color: #e2c8b18e;
   backdrop-filter: blur(4px);
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 .mynavbar i,
@@ -206,34 +206,25 @@ body {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  padding-top: 7rem;
-  padding-bottom: 10rem;
+  padding: 7rem 0 10rem;
   z-index: 0;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%);
 }
 
 .home::before {
   content: "";
   position: absolute;
   inset: 0;
-
-  mask-image: linear-gradient(
+  background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 1) 30%,
-    rgba(0, 0, 0, 1) 70%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgba(255,255,255,0.4) 0%,
+    rgba(255,255,255,0.4) 100%
   );
+  z-index: 1;
+}
 
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 1) 30%,
-    rgba(0, 0, 0, 1) 70%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-
-  z-index: -2;
+.home > * {
+  position: relative;
+  z-index: 2;
 }
 
 .home h3 {

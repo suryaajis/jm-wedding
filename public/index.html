@@ -60,6 +60,18 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      html.js body {
+        visibility: hidden;
+      }
+      html.js body.loaded {
+        visibility: visible;
+      }
+    </style>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
   </head>
 
   <body>
@@ -422,6 +434,12 @@
   <!-- <script src="script.js"></script> -->
 
   <script>
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+  <script>
     AOS.init();
     const rootElement = document.querySelector(":root");
     const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
@@ -461,7 +479,7 @@
       audioIconWrapper.style.display = "flex";
       audioIcon.classList.add("bi-disc", "spin");
       audioIcon.classList.remove("bi-pause-circle");
-      
+
       song
         .play()
         .then(() => {
