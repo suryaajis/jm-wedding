@@ -479,7 +479,8 @@
       audioIconWrapper.style.display = "flex";
       audioIcon.classList.add("bi-disc", "spin");
       audioIcon.classList.remove("bi-pause-circle");
-
+      
+      song.load();
       song
         .play()
         .then(() => {
